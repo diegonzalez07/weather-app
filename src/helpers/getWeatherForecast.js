@@ -4,12 +4,13 @@ export const getWeatherForecast = async (city) => {
   const data = await resp.json();
   const hourlyForecast = data.list.map((hour) => ({
     id: hour.dt,
+    atmosphericPressure: hour.main.pressure,
+    hour: hour.dt_txt,
+    humidity: hour.main.humidity,
+    icon: hour.weather[0].icon,
     temperature: hour.main.temp,
     thermalSensation: hour.main.feels_like,
-    humidity: hour.main.humidity,
-    atmosphericPressure: hour.main.pressure,
-    icon: hour.weather[0].icon,
   }));
-
+  console.log(hourlyForecast);
   return hourlyForecast;
 };
