@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SelectCity } from "./components/SelectCity";
+import { WeatherForecastGrid } from "./components/WeatherForecastGrid";
 
 export const WeatherApp = () => {
   const [city, setCity] = useState("miCity");
@@ -14,14 +15,13 @@ export const WeatherApp = () => {
       <div className="row">
         <div className="col">
           <>
-            {/* Titulo */}
             <h1>WeatherApp</h1>
 
-            {/* Select de ciudades */}
             <SelectCity onSetCity={handleSetCity} selectedCity={city} />
 
             {/* WeatherList */}
             <h2>Nombre de la ciudad donde se encuentra</h2>
+            <WeatherForecastGrid city={city} />
             {/* WeatherCard */}
           </>
         </div>
