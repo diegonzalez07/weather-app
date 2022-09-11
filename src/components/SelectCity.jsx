@@ -1,20 +1,18 @@
 import { useState } from "react";
 
-export const SelectCity = () => {
-  const [cityValue, setCityValue] = useState("0");
-
-  const handleSelectCity = ({ target }) => {
-    setCityValue(target.value);
+export const SelectCity = ({ onSetCity, selectedCity }) => {
+  const handleChangeCity = ({ target }) => {
+    onSetCity(target.value);
   };
 
   return (
     <form>
       <select
         className="form-select"
-        value={cityValue}
-        onChange={handleSelectCity}
+        value={selectedCity}
+        onChange={handleChangeCity}
       >
-        <option value="0">Mi ciudad</option>
+        <option value="miCity">Mi ciudad</option>
         <option value="1">Bogotá</option>
         <option value="2">Madrid</option>
         <option value="3">Londres</option>
