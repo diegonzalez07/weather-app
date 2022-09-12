@@ -33,18 +33,18 @@ export const WeatherCurrentCard = ({ currentWeather }) => {
                       <p className="m-0">Humedad: {humidity}%</p>
                     </div>
                     <div className="col">
-                      <p className="m-0">Veloc Viento: {wind} km/h</p>
+                      <p className="m-0">Viento: {wind} km/h</p>
                     </div>
                   </div>
                   <hr />
                   <div className="row align-items-center">
                     <div className="col-5">
                       <p className="m-0">
-                        Presión Atmosférica: {atmosphericPressure}
+                        Presión Atmosférica: {atmosphericPressure} hPa
                       </p>
                     </div>
                     <div className="col">
-                      <p className="m-0">Visibilidad: {visibility}</p>
+                      <p className="m-0">Visibilidad: {visibility} mts</p>
                     </div>
                   </div>
                 </div>

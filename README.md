@@ -26,4 +26,6 @@ VITE_API_KEY=api-key-personal
 $ npm run dev
 ```
 
+El proyecto se levantará por defecto en el puerto `5173`, pudiendo acceder con la url completa de http://localhost:5173/
+
 

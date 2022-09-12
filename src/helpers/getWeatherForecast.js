@@ -13,7 +13,6 @@ export const getWeatherForecast = async (city) => {
     temperature: hour.main.temp,
     thermalSensation: hour.main.feels_like,
   }));
-  console.log(hourlyForecast);
   return hourlyForecast;
 };
 
@@ -30,6 +29,5 @@ export const getWeatherForecastForMiCity = async (coords) => {
     temperature: hour.main.temp,
     thermalSensation: hour.main.feels_like,
   }));
-  console.log(hourlyForecast);
   return hourlyForecast;
 };
