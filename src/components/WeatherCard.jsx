@@ -1,15 +1,15 @@
 import { getFormatBy } from "../utils/dateUtils";
+import PropTypes from "prop-types";
 
-export const WeatherCard = ({ weatherHour }) => {
-  const {
-    id,
-    atmosphericPressure,
-    hour,
-    humidity,
-    icon,
-    temperature,
-    thermalSensation,
-  } = weatherHour;
+export const WeatherCard = ({
+  id,
+  atmosphericPressure,
+  hour,
+  humidity,
+  icon,
+  temperature,
+  thermalSensation,
+}) => {
   return (
     <div className="card mb-3 shadow">
       <h5 className="card-header text-center">
@@ -45,13 +45,21 @@ export const WeatherCard = ({ weatherHour }) => {
           <hr />
           <div className="row align-items-center text-center">
             <div className="col">
-              <p className="m-0">
-                Pres AT: {atmosphericPressure} Pa
-              </p>
+              <p className="m-0">Pres AT: {atmosphericPressure} Pa</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+WeatherCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  atmosphericPressure: PropTypes.number.isRequired,
+  hour: PropTypes.string.isRequired,
+  humidity: PropTypes.number.isRequired,
+  icon: PropTypes.string.isRequired,
+  temperature: PropTypes.number.isRequired,
+  thermalSensation: PropTypes.number.isRequired,
 };
