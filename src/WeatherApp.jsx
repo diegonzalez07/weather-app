@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Container } from "./components/Container";
-import { Navbar } from "./components/Navbar";
-import { SelectCity } from "./components/SelectCity";
-import { Spinner } from "./components/Spinner";
-import { WeatherCurrent } from "./components/WeatherCurrents";
-import { WeatherForecastGrid } from "./components/WeatherForecastGrid";
+import {
+  Container,
+  Navbar,
+  SelectCity,
+  Spinner,
+  WeatherCurrent,
+  WeatherForecastGrid,
+} from "./components";
 import { useGetWeatherCurrent } from "./hooks/useGetWeatherCurrent";
 
 export const WeatherApp = () => {
