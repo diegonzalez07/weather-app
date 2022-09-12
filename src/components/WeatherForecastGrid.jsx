@@ -8,7 +8,7 @@ export const WeatherForecastGrid = ({ hourlyWeather }) => {
       <div className="row">
         {hourlyWeather.map((hour) => (
           <div key={hour.id} className="col-3">
-            <WeatherCard weatherHour={hour} />
+            <WeatherCard {...hour} />
           </div>
         ))}
       </div>
