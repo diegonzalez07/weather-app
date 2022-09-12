@@ -1,5 +1,7 @@
+import { API_KEY } from "../utils/constants";
+
 export const getCurrentWeatherForCity = async (city) => {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=es&appid=9a906dce0682400c53780ed9cc8f3bfd`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=es&appid=${API_KEY}`;
   const resp = await fetch(url);
   const data = await resp.json();
 
@@ -20,7 +22,7 @@ export const getCurrentWeatherForCity = async (city) => {
 };
 
 export const getCurrentWeatherForMiCity = async (coords) => {
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.long}&units=metric&lang=es&appid=9a906dce0682400c53780ed9cc8f3bfd`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.long}&units=metric&lang=es&appid=${API_KEY}`;
   const resp = await fetch(url);
   const data = await resp.json();
   const currentWeather = {

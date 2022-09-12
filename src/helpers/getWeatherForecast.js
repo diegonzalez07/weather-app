@@ -1,5 +1,7 @@
+import { API_KEY } from "../utils/constants";
+
 export const getWeatherForecast = async (city) => {
-  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=es&appid=9a906dce0682400c53780ed9cc8f3bfd`;
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=es&appid=${API_KEY}`;
   const resp = await fetch(url);
   const data = await resp.json();
   const hourlyForecast = data.list.map((hour) => ({
@@ -16,7 +18,7 @@ export const getWeatherForecast = async (city) => {
 };
 
 export const getWeatherForecastForMiCity = async (coords) => {
-  const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${coords.lat}&lon=${coords.long}&units=metric&lang=es&appid=9a906dce0682400c53780ed9cc8f3bfd`;
+  const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${coords.lat}&lon=${coords.long}&units=metric&lang=es&appid=${API_KEY}`;
   const resp = await fetch(url);
   const data = await resp.json();
   const hourlyForecast = data.list.map((hour) => ({
