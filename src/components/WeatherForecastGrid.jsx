@@ -37,7 +37,8 @@ export const WeatherForecastGrid = ({ city }) => {
 
   return (
     <>
-      <h3>{city}</h3>
+      <h2>Pronóstico extendido</h2>
+      <hr />
       <div className="row">
         {hourlyWeather.map((hour) => (
           <div key={hour.id} className="col-3">

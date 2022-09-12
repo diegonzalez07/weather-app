@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export const SelectCity = ({ onSetCity, selectedCity }) => {
   const handleChangeCity = ({ target }) => {
     onSetCity(target.value);

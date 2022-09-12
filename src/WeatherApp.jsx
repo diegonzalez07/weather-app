@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container } from "./components/Container";
 import { Navbar } from "./components/Navbar";
 import { SelectCity } from "./components/SelectCity";
+import { WeatherCurrent } from "./components/WeatherCurrents";
 import { WeatherForecastGrid } from "./components/WeatherForecastGrid";
 
 export const WeatherApp = () => {
@@ -17,10 +18,8 @@ export const WeatherApp = () => {
       <Navbar />
       <Container>
         <SelectCity onSetCity={handleSetCity} selectedCity={city} />
-        {/* WeatherList */}
-        <h2>Nombre de la ciudad donde se encuentra</h2>
+        <WeatherCurrent city={city} />
         <WeatherForecastGrid city={city} />
-        {/* WeatherCard */}
       </Container>
     </>
   );
