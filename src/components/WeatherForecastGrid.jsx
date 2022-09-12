@@ -1,18 +1,31 @@
 import { useEffect, useState } from "react";
-import { getWeatherForecast } from "../helpers/getWeatherForecast";
+import {
+  getWeatherForecast,
+  getWeatherForecastForMiCity,
+} from "../helpers/getWeatherForecast";
 import { WeatherCard } from "./WeatherCard";
 
 export const WeatherForecastGrid = ({ city }) => {
   const [hourlyWeather, setHourlyWeather] = useState([]);
 
   const getWeather = async () => {
-    const weatherList = await getWeatherForecast(city);
-    setHourlyWeather(() => weatherList);
+    if (city === "miCity") {
+      await navigator.geolocation.getCurrentPosition(async (position) => {
+        const lat = position.coords.latitude;
+        const long = position.coords.longitude;
+
+        const weatherList = await getWeatherForecastForMiCity({ lat, long });
+        setHourlyWeather(() => weatherList);
+      });
+    } else {
+      const weatherList = await getWeatherForecast(city);
+      setHourlyWeather(() => weatherList);
+    }
   };
 
   useEffect(() => {
-    getWeather(city);
-  }, []);
+    getWeather();
+  }, [city]);
 
   if (hourlyWeather.length === 0) {
     return (

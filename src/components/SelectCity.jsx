@@ -13,11 +13,11 @@ export const SelectCity = ({ onSetCity, selectedCity }) => {
         onChange={handleChangeCity}
       >
         <option value="miCity">Mi ciudad</option>
-        <option value="1">Bogotá</option>
-        <option value="2">Madrid</option>
-        <option value="3">Londres</option>
-        <option value="4">Paris</option>
-        <option value="5">Montevideo</option>
+        <option value="bogota">Bogotá</option>
+        <option value="madrid">Madrid</option>
+        <option value="londres">Londres</option>
+        <option value="parís">Paris</option>
+        <option value="montevideo">Montevideo</option>
       </select>
     </form>
   );
