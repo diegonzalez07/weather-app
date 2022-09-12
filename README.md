@@ -28,4 +28,6 @@ $ npm run dev
 
 El proyecto se levantará por defecto en el puerto `5173`, pudiendo acceder con la url completa de http://localhost:5173/
 
+### Url de despliegue
 
+El proyecto se encuentra desplegado en GitHub Pages en la siguiente URL: https://diegonzalez07.github.io/weather-app/
